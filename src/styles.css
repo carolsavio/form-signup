@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+:root{
+    --main-color: #3A445D;
+    --second-color: #5E5768;
+    --font-color: #272727;
+    --shadow-color: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --light1-color: #f6f8ff; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light1-color);
+}
+main{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.login-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.login-left img{
+    width: 450px;
+}
+h2{
+    font-weight: 600;
+    color: var(--font-color);
+}
+.login{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.btn-defalt{
+    background-color: var(--main-color);
+    display: flex;
+
+    align-items: center;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--light1-color);
+    cursor: pointer;
+    justify-content: center;
+    gap: 8px;
+    height: fit-content;
+    box-shadow: var(--shadow-color);
+    transition: background-color 0.2s ease;
+}
+.btn-defalt:hover{
+    background-color: var(--second-color);   
+}
+#form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    background-color: var(--light1-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-color);
+}
+#form_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+
+.form_title{
+    font-weight: 600;
+    color: var(--font-color);
+    position: relative;
+}
+.form_title::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    border: 30px;
+    background-color: var(--second-color);
+    left: 0;
+    bottom: 0;
+}
+.login-mobile{
+    display: none;
+    
+}
+.login-mobile a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    height: 100%;
+}
+#input_container {
+    display: grid;
+    gap: 24px;
+}
+.form-label {
+    font-size: 12px;
+    color: #404044;
+    font-weight: 500;
+}
+.input-field{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-color);
+
+}
+.input-field i{
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+}
+.input-field .password-icon:hover{
+    cursor: pointer;
+    color: var(--main-color);
+}
+.form-control{
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+}
+.form-control:focus{
+    outline: none;
+}
+#input-box .input-field:focus-within{
+    outline: 2px solid var(--main-color);
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset !important;
+}
+.radio-container{
+    grid-column: span 2;
+}
+#gender_inputs {
+    display: flex;
+    gap: 20px;
+}
+.radio-box{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.form-control[type="radio"]{
+    accent-color: var(--main-color);
+}
+
+/*Modo responsivo*/
+@media screen and (max-width: 500px) {
+    #form_container {
+        width: 100%;
+        height: 100vh;
+        padding: 32px;
+    }
+    #input_container {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+    }
+    .login-left{
+        display: none;
+    }
+    .login-mobile{
+        display: block;
+    }
+}
