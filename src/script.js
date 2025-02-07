@@ -108,7 +108,7 @@ function nameIsValid(value) {
         return validator;
     }
 
-    const regex = /^[a-zA-Z]/;
+    const regex = /^[a-zA-Z]+$/;
     if(!regex.test(value)) {
         validator.isValid = false;
         validator.errorMsg = 'O campo deve conter apenas letras!'
@@ -169,7 +169,8 @@ function passwordIsSecure(value) {
         validator.errorMsg = 'A senha é obrigatória!'
         return validator;
     }
-    const regex = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$");
+    const regex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W_]).{8,}$");
+
     if(!regex.test(value)){
         validator.isValid = false;
         validator.errorMsg = `
