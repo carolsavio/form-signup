@@ -5,6 +5,8 @@
     --font-color: #272727;
     --shadow-color: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     --light1-color: #f6f8ff; 
+    --error-color: #EF1822;
+    --sucess-color: #3BE373;
 }
 
 *{
@@ -79,6 +81,32 @@ h2{
     align-items: center;
     
 
+}
+.error {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+    width: 200px;
+}
+
+#input-box.invalid .form-label {
+    color: var(--error-color);
+}
+#input-box.invalid .input-field {
+    border: 1px solid var(--error-color);
+}
+#input-box.valid .form-label {
+    color: var(--sucess-color);
+}
+#input-box.valid .input-field {
+   border: 1px solid var(--sucess-color)
+}
+
+.radio-container.invalid .form-label:first-child{
+    color: var(--error-color);
+}
+.radio-container.valid .form-label:first-child{
+    color: var(--sucess-color);
 }
 
 .form_title{
